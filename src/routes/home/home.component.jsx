@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CategoriesContext } from "../../context/categories.context";
 import Category from "../../components/category/category.component";
+
 import CallToAction from "../../components/call-to-action/call-to-action.component";
 
 const imageHeaders = [

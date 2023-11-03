@@ -12,28 +12,30 @@ const CallToAction = () => {
           srcSet={require("../../assets/home/tablet/image-header.jpg")}
         />
         <img
-          className="mt-[-100px]"
+          className="mt-[-100px] sm:mt-0"
           srcSet={require("../../assets/home/desktop/image-hero.jpg")}
           alt=""
         />
       </picture>
-      <div className="absolute bottom-[112px] text-center">
-        <div className="text-[14px] text-white/[.5] tracking-[10px] mb-4">
-          NEW PRODUCT
+      <div className="absolute inset-0 text-center flex items-end justify-center mb-[112px] sm:items-center sm:mb-0 xl:justify-start xl:max-w-[1110px] xl:mx-auto xl:text-left">
+        <div className="max-w-[396px] px-7 sm:px-0">
+          <div className="text-[14px] text-white/[.5] tracking-[10px] mb-4">
+            NEW PRODUCT
+          </div>
+          <h1 className="mb-7 text-white text-[38px] font-bold leading-10 tracking-[1.29px] uppercase sm:text-[56px] sm:tracking-[2px] sm:leading-[56px]">
+            XX99 Mark II HeadphoneS
+          </h1>
+          <p className="mb-7 text-[15px] leading-[25px] text-white/[.75] font-medium xl:max-w-[349px]">
+            Experience natural, lifelike audio and exceptional build quality
+            made for the passionate music enthusiast.
+          </p>
+          <a
+            href="#"
+            className="flex items-center text-white justify-center bg-[#D87D4A] max-w-[160px] min-h-[48px] uppercase mx-auto text-[13px] tracking-[1px] xl:mx-0"
+          >
+            See Product
+          </a>
         </div>
-        <h1 className="mb-7 text-white text-[38px] font-bold leading-10 tracking-[1.29px] uppercase">
-          XX99 Mark II HeadphoneS
-        </h1>
-        <p className="mb-7 text-[15px] leading-[25px] text-white/[.75] max-w-[328px] mx-auto">
-          Experience natural, lifelike audio and exceptional build quality made
-          for the passionate music enthusiast.
-        </p>
-        <a
-          href="#"
-          className="flex items-center text-white justify-center bg-[#D87D4A] max-w-[160px] min-h-[48px] uppercase mx-auto"
-        >
-          See Product
-        </a>
       </div>
     </div>
   );
