@@ -1,4 +1,5 @@
 import { ReactComponent as RightArrow } from "../../assets/shared/desktop/icon-arrow-right.svg";
+import Button from "../button/button.component";
 
 const CategoryItem = ({ category }) => {
   const { id, imgUrl, title, url } = category;
@@ -13,12 +14,10 @@ const CategoryItem = ({ category }) => {
         alt={title}
       />
       <h2 className="text-[15px] font-bold uppercase">{title}</h2>
-      <a
-        className="flex items-center gap-x-[13.3px] text-[13px] font-bold uppercase text-[#979797]"
-        href={url}
-      >
+
+      <Button url={url} buttonType="buttonThree">
         Shop <RightArrow />
-      </a>
+      </Button>
     </div>
   );
 };

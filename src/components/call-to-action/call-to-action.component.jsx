@@ -1,3 +1,4 @@
+import Button from "../button/button.component";
 const CallToAction = () => {
   return (
     <div className="relative">
@@ -29,12 +30,10 @@ const CallToAction = () => {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <a
-            href="#"
-            className="flex items-center text-white justify-center bg-[#D87D4A] max-w-[160px] min-h-[48px] uppercase mx-auto text-[13px] tracking-[1px] xl:mx-0"
-          >
+
+          <Button url="#" buttonType="buttonOne">
             See Product
-          </a>
+          </Button>
         </div>
       </div>
     </div>
