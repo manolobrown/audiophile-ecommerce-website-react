@@ -5,7 +5,7 @@ const CategoryItem = ({ category }) => {
   const { id, imgUrl, title, url } = category;
   return (
     <div
-      className="bg-[#F1F1F1] rounded-lg flex flex-col items-center max-w-[327px] gap-y-[15px] p-5 relative w-full h-[165px] justify-end"
+      className="bg-[#F1F1F1] rounded-lg flex flex-col items-center sm:max-w-[327px] gap-y-[15px] p-5 relative w-full h-[165px] justify-end"
       key={id}
     >
       <img

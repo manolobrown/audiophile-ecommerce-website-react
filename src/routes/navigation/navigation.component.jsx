@@ -42,7 +42,9 @@ const Navigation = () => {
         leaveTo="opacity-0"
       >
         <div className="pt-[84px] absolute bg-white w-full top-[89px] z-20 pb-[35px] rounded-b-lg">
-          <Category categories={categories} />
+          <div className="container mx-auto">
+            <Category categories={categories} />
+          </div>
         </div>
         <div className="fixed w-full h-full inset-0 bg-black/[.4] z-10"></div>
       </Transition>

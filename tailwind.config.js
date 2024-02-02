@@ -6,6 +6,9 @@ module.exports = {
     fontFamily: {
       sans: ["Manrope", "sans-serif"],
     },
+    container: {
+      padding: "1.5rem",
+    },
   },
   plugins: [],
 };
