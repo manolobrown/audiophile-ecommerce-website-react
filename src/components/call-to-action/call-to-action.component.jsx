@@ -1,7 +1,7 @@
 import Button from "../button/button.component";
 const CallToAction = () => {
   return (
-    <div className="relative">
+    <div className="relative xl:mb-[200px]">
       <picture>
         <source
           media="(max-width: 767px)"

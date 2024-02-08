@@ -6,4 +6,7 @@
   #root {
     @apply pt-[89px] sm:pt-0;
   }
+  .container {
+    @apply xl:max-w-[1110px];
+  }
 }
