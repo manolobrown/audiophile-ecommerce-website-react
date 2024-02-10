@@ -30,9 +30,9 @@ const Layout = () => {
 
         <div className="hidden xl:flex xl:text-white xl:tracking-[2px] xl:uppercase xl:gap-x-[34px] xl:text-[13px] xl:leading-[25px]">
           <Link to="/">Home</Link>
-          <Link to="/headphones">Headphones</Link>
-          <Link to="/speakers">Speakers</Link>
-          <Link to="/earphones">Earphones</Link>
+          <Link to="/category/headphones">Headphones</Link>
+          <Link to="/category/speakers">Speakers</Link>
+          <Link to="/category/earphones">Earphones</Link>
         </div>
 
         <CartLogo className="sm:ml-auto xl:ml-0" />
