@@ -9,4 +9,7 @@
   .container {
     @apply xl:max-w-[1110px];
   }
+  .category-page {
+    @apply bg-black;
+  }
 }

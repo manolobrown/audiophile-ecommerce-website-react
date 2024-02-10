@@ -54,40 +54,42 @@ const Layout = () => {
         <div className="fixed w-full h-full inset-0 bg-black/[.4] z-10"></div>
       </Transition>
       <Outlet />
-      <div className="container">
-        <div className=" text-black text-center flex flex-col gap-8 relative justify-center mb-[120px] sm:gap-0 xl:flex-row-reverse xl:text-left xl:gap-x-[125px] xl:mb-[200px]">
-          <picture>
-            <source
-              media="(max-width: 767px)"
-              srcSet={require("../../assets/shared/mobile/image-best-gear.jpg")}
-            />
+      <div className="bg-white">
+        <div className="container">
+          <div className=" text-black text-center flex flex-col gap-8 relative justify-center pb-[120px] sm:gap-0 xl:flex-row-reverse xl:text-left xl:gap-x-[125px] xl:pb-[200px]">
+            <picture>
+              <source
+                media="(max-width: 767px)"
+                srcSet={require("../../assets/shared/mobile/image-best-gear.jpg")}
+              />
 
-            <source
-              media="(max-width: 1199px)"
-              srcSet={require("../../assets/shared/tablet/image-best-gear.jpg")}
-            />
-            <img
-              className="object-cover rounded-[8px] sm:mb-16 xl:mb-0"
-              srcSet={require("../../assets/shared/desktop/image-best-gear.jpg")}
-              alt=""
-            />
-          </picture>
+              <source
+                media="(max-width: 1199px)"
+                srcSet={require("../../assets/shared/tablet/image-best-gear.jpg")}
+              />
+              <img
+                className="object-cover rounded-[8px] sm:mb-16 xl:mb-0"
+                srcSet={require("../../assets/shared/desktop/image-best-gear.jpg")}
+                alt=""
+              />
+            </picture>
 
-          <div className="flex flex-col gap-8 justify-center sm:gap-0">
-            <h2 className="uppercase text-[#000] text-[28px] tracking-[1px] leading-10 font-bold sm:text-[40px] sm:leading-[44px] sm:tracking-[1.43px] sm:max-w-[573px] sm:mx-auto sm:mb-8">
-              Bringing you the <span className="text-[#D87D4A]">best</span>{" "}
-              audio&nbsp;gear
-            </h2>
+            <div className="flex flex-col gap-8 justify-center sm:gap-0">
+              <h2 className="uppercase text-[#000] text-[28px] tracking-[1px] leading-10 font-bold sm:text-[40px] sm:leading-[44px] sm:tracking-[1.43px] sm:max-w-[573px] sm:mx-auto sm:mb-8">
+                Bringing you the <span className="text-[#D87D4A]">best</span>{" "}
+                audio&nbsp;gear
+              </h2>
 
-            <p className="sm:max-w-[573px] sm:mx-auto">
-              Located at the heart of New York City, Audiophile is the premier
-              store for high end headphones, earphones, speakers, and audio
-              accessories. We have a large showroom and luxury demonstration
-              rooms available for you to browse and experience a wide range of
-              our products. Stop by our store to meet some of the fantastic
-              people who make Audiophile the best place to buy your portable
-              audio equipment.
-            </p>
+              <p className="sm:max-w-[573px] sm:mx-auto">
+                Located at the heart of New York City, Audiophile is the premier
+                store for high end headphones, earphones, speakers, and audio
+                accessories. We have a large showroom and luxury demonstration
+                rooms available for you to browse and experience a wide range of
+                our products. Stop by our store to meet some of the fantastic
+                people who make Audiophile the best place to buy your portable
+                audio equipment.
+              </p>
+            </div>
           </div>
         </div>
       </div>
