@@ -1,11 +1,14 @@
 import { useContext, useEffect } from "react";
 import { DataContext } from "../../context/data.context";
+import { CategoriesContext } from "../../context/categories.context";
+import Categories from "../../components/category/category.component";
 import { useParams } from "react-router-dom";
 import Button from "../../components/button/button.component";
 
 const Category = () => {
   let params = useParams();
   const data = useContext(DataContext);
+  const { categories } = useContext(CategoriesContext);
   useEffect(() => {
     document.body.classList.add("category-page");
     return () => {
@@ -21,8 +24,8 @@ const Category = () => {
   filteredCategories.reverse();
   return (
     <div className="bg-white pb-[120px]">
-      <div className="bg-black mb-[64px]">
-        <h1 className="text-[28px] text-white uppercase tracking-[2px] text-center py-[32px]">
+      <div className="bg-black mb-[64px] sm:mb-[120px]">
+        <h1 className="text-[28px] text-white uppercase tracking-[2px] text-center py-[32px] sm:text-[40px] sm:tracking-[1.43px] leading-[44px] sm:pt-[105px] sm:pb-[97px] font-bold">
           {params.category}
         </h1>
       </div>
@@ -61,6 +64,9 @@ const Category = () => {
           <Button buttonType="buttonOne">See Product</Button>
         </div>
       ))}
+      <div className="container">
+        <Categories categories={categories} />
+      </div>
     </div>
   );
 };

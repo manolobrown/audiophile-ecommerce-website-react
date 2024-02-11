@@ -18,7 +18,7 @@ const Layout = () => {
   const [isShowing, setIsShowing] = useState(false);
   return (
     <Fragment>
-      <div className="bg-transparent flex items-center justify-between py-8 px-6 absolute w-full top-0 left-0 right-0 z-30 after:block after:absolute after:bg-white after:opacity-[.10] after:bottom-0 after:h-[1px] after:left-0 after:right-0 sm:justify-start sm:gap-[42px] sm:after:left-[20px] sm:after:right-[20px] xl:container xl:px-0 xl:after:inset-x-0 xl:justify-between">
+      <div className="header bg-transparent flex items-center justify-between py-8 px-6 absolute w-full top-0 left-0 right-0 z-30 after:block after:absolute after:bg-white after:opacity-[.10] after:bottom-0 after:h-[1px] after:left-0 after:right-0 sm:justify-start sm:gap-[42px] sm:after:left-[20px] sm:after:right-[20px] xl:container xl:px-0 xl:after:inset-x-0 xl:justify-between">
         <Hamburger
           className="xl:hidden"
           onClick={() => setIsShowing((isShowing) => !isShowing)}

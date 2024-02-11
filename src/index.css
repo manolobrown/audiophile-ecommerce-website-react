@@ -12,4 +12,7 @@
   .category-page {
     @apply bg-black;
   }
+  .category-page .header {
+    @apply sm:relative;
+  }
 }
