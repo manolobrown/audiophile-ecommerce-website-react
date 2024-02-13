@@ -100,9 +100,9 @@ const Layout = () => {
             <Logo />
             <div className="flex flex-col uppercase font-bold gap-4 text-[13px] leading-6 tracking-[2px] sm:flex-row">
               <Link to="/">Home</Link>
-              <Link to="/headphones">Headphones</Link>
-              <Link to="/speakers">Speakers</Link>
-              <Link to="/earphones">Earphones</Link>
+              <Link to="/category/headphones">Headphones</Link>
+              <Link to="/category/speakers">Speakers</Link>
+              <Link to="/category/earphones">Earphones</Link>
             </div>
           </div>
 

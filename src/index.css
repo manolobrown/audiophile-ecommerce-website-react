@@ -7,7 +7,7 @@
     @apply pt-[89px] sm:pt-0;
   }
   .container {
-    @apply xl:max-w-[1110px];
+    @apply md:max-w-[689px] xl:max-w-[1110px];
   }
   .category-page {
     @apply bg-black;
