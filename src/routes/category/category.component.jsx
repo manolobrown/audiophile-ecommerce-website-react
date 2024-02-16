@@ -65,7 +65,9 @@ const Category = () => {
             <p className="text-[15px] opacity-50 leading-[25px] md:max-w-[572px] md:mx-auto xl:max-w-full xl:mx-0 xl:mb-[22px]">
               {product.description}
             </p>
-            <Button buttonType="buttonOne">See Product</Button>
+            <Button url={`/product/${product.slug}`} buttonType="buttonOne">
+              See Product
+            </Button>
           </div>
         </div>
       ))}

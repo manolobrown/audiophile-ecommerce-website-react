@@ -9,10 +9,12 @@
   .container {
     @apply md:max-w-[689px] xl:max-w-[1110px];
   }
-  .category-page {
+  .category-page,
+  .product-page {
     @apply bg-black;
   }
-  .category-page .header {
+  .category-page .header,
+  .product-page .header {
     @apply sm:relative;
   }
 }
