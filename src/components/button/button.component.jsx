@@ -11,7 +11,8 @@ const BUTTON_TYPE_CLASSES = {
     "flex items-center gap-x-[13.3px] text-[13px] font-bold uppercase text-[#979797] hover:text-[#D87D4A]",
   buttonFour:
     "flex items-center text-white justify-center bg-black w-full max-w-[160px] min-h-[48px] uppercase mx-auto text-[13px] tracking-[1px] border border-black xl:mx-0 hover:text-black hover:bg-transparent",
-  buttonText: "text-[15px] leading-[25px] text-[#000] opacity-50",
+  buttonText:
+    "text-[15px] leading-[25px] text-[#000] opacity-50 hover:text-[#D87D4A]",
 };
 
 const Button = ({ children, url, buttonType, ...otherProps }) => {

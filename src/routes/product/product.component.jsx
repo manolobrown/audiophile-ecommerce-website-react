@@ -22,11 +22,12 @@ const Product = () => {
     style: "currency",
     currency: "USD",
   });
-  console.log(getProduct);
+
   const featuresDescription = getProduct[0].features.split("\n\n");
-  console.log(featuresDescription);
+  const productName = getProduct[0].name.split(" ");
+
   return (
-    <div className="bg-white pb-[120px]">
+    <div className="bg-white pb-[120px] xl:pb-[160px]">
       <div className="container">
         <div className="pt-4 pb-6">
           <Button
@@ -54,16 +55,21 @@ const Product = () => {
               alt=""
             />
           </picture>
-          {getProduct[0].new ? (
-            <h3 className="uppercase text-[#D87D4A] font-normal tracking-[10px] m-0">
-              New Product
-            </h3>
-          ) : (
-            ""
-          )}
-          <div className="flex flex-col gap-y-6 md:gap-y-8">
-            <h2 className="uppercase text-[28px] font-bold tracking-[1px] md:text-[40px] md:tracking-[1.43px] md:max-w-[max-content] md:mx-auto xl:mx-0 xl:mb-[14px]">
-              {getProduct[0].name}
+
+          <div className="flex flex-col gap-y-6 md:gap-y-8 xl:max-w-[445px]">
+            {getProduct[0].new ? (
+              <h3 className="uppercase text-[#D87D4A] font-normal tracking-[10px] m-0 md:tracking-[8.57px] md:text-[12px] mb-[-15px] xl:text-[14px]">
+                New Product
+              </h3>
+            ) : (
+              ""
+            )}
+            <h2 className="uppercase text-[28px] font-bold tracking-[1px] xl:mx-0 xl:mb-[14px] xl:text-[40px] xl:tracking-[1.43px] xl:leading-[44px]">
+              {productName.map((name, index) => (
+                <span key={index} className="block">
+                  {name}
+                </span>
+              ))}
             </h2>
             <p className="text-[15px] opacity-50 leading-[25px] md:max-w-[572px] md:mx-auto xl:max-w-full xl:mx-0 xl:mb-[22px]">
               {getProduct[0].description}
@@ -77,39 +83,42 @@ const Product = () => {
             </div>
           </div>
         </div>
-        <div className="mb-[88px] md:mb-[120px]">
-          <h2 className="text-2xl font-bold tracking-[0.86px] leading-[36px] uppercase mb-6 md:text-[32px] md:tracking-[1.14px]">
-            Features
-          </h2>
-          {featuresDescription.map((description) => (
-            <p
-              className="text-[15px] leading-[25px] mb-6 last:mb-0"
-              key={description}
-            >
-              {description}
-            </p>
-          ))}
-        </div>
-        <div className="mb-[88px] md:mb-[153px] md:flex md:gap-x-[167px]">
-          <h2 className="text-2xl font-bold tracking-[0.86px] leading-[36px] uppercase mb-6">
-            In the Box
-          </h2>
-          <ul className="flex flex-col gap-y-2">
-            {Object.values(getProduct[0].includes).map((feature) => (
-              <l1
-                className="text-[15px] leading-[25px] flex gap-x-6"
-                key={feature}
+        <div className="xl:flex xl:gap-x-[125px] xl:mb-[160px]">
+          <div className="mb-[88px] md:mb-[120px] xl:mb-0 xl:max-w-[635px]">
+            <h2 className="text-2xl font-bold tracking-[0.86px] leading-[36px] uppercase mb-6 md:text-[32px] md:tracking-[1.14px] xl:mb-8">
+              Features
+            </h2>
+            {featuresDescription.map((description, index) => (
+              <p
+                className="text-[15px] leading-[25px] mb-6 last:mb-0 opacity-50"
+                key={index}
               >
-                <span className="text-[#D87D4A] font-bold">
-                  {feature.quantity}x
-                </span>
-                <span className="opacity-50">{feature.item}</span>
-              </l1>
+                {description}
+              </p>
             ))}
-          </ul>
+          </div>
+          <div className="mb-[88px] md:mb-[153px] md:flex md:gap-x-[167px] xl:mb-0 xl:flex-col">
+            <h2 className="text-2xl font-bold tracking-[0.86px] leading-[36px] uppercase mb-6 md:text-[32px] md:tracking-[1.14px] xl:mb-8">
+              In the Box
+            </h2>
+            <ul className="flex flex-col gap-y-2">
+              {Object.values(getProduct[0].includes).map((feature, index) => (
+                <li
+                  className="text-[15px] leading-[25px] flex gap-x-6"
+                  key={index}
+                >
+                  <span className="text-[#D87D4A] font-bold">
+                    {feature.quantity}x
+                  </span>
+                  <span className="opacity-50">{feature.item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className="flex flex-col gap-y-5 mb-[120px] md:flex-row md:gap-x-[17.67px]">
-          <div className="flex flex-col gap-y-5">
+
+        <div className="flex flex-col gap-y-5 mb-[120px] md:flex-row md:gap-x-[17.67px] xl:gap-x-[30px] xl:mb-[160px]">
+          <div className="flex flex-col justify-between">
             <picture>
               <source
                 media="(max-width: 767px)"
@@ -163,13 +172,13 @@ const Product = () => {
           </div>
         </div>
         <div className="mb-[165px]">
-          <h2 className="text-2xl font-bold tracking-[0.86px] leading-[36px] uppercase mb-10 text-center">
+          <h2 className="text-2xl font-bold tracking-[0.86px] leading-[36px] uppercase mb-10 text-center md:text-[32px] md:tracking-[1.14px] md:mb-[56px]">
             You May Also Like
           </h2>
           <div className="md:flex md:flex-row md:gap-x-[11px]">
             {Object.values(getProduct[0].others).map((product) => (
               <div
-                className="text-[15px] leading-[25px] flex flex-col text-center gap-y-8 mb-14 last:mb-0"
+                className="text-[15px] leading-[25px] flex flex-col text-center gap-y-8 mb-14 last:mb-0 items-center"
                 key={product}
               >
                 <picture>

@@ -29,10 +29,18 @@ const Layout = () => {
         </Link>
 
         <div className="hidden xl:flex xl:text-white xl:tracking-[2px] xl:uppercase xl:gap-x-[34px] xl:text-[13px] xl:leading-[25px]">
-          <Link to="/">Home</Link>
-          <Link to="/category/headphones">Headphones</Link>
-          <Link to="/category/speakers">Speakers</Link>
-          <Link to="/category/earphones">Earphones</Link>
+          <Link className="hover:text-[#D87D4A]" to="/">
+            Home
+          </Link>
+          <Link className="hover:text-[#D87D4A]" to="/category/headphones">
+            Headphones
+          </Link>
+          <Link className="hover:text-[#D87D4A]" to="/category/speakers">
+            Speakers
+          </Link>
+          <Link className="hover:text-[#D87D4A]" to="/category/earphones">
+            Earphones
+          </Link>
         </div>
 
         <CartLogo className="sm:ml-auto xl:ml-0" />
