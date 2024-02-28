@@ -10,9 +10,11 @@
     @apply md:max-w-[689px] xl:max-w-[1110px];
   }
   .category-page,
-  .product-page {
+  .product-page,
+  .checkout-page {
     @apply bg-black;
   }
+  .checkout-page .header,
   .category-page .header,
   .product-page .header {
     @apply sm:relative;
