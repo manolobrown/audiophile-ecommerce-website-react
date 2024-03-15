@@ -1,16 +1,26 @@
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
-import { ReactComponent as CartLogo } from "../../assets/shared/desktop/icon-cart.svg";
+
+import { ReactComponent as CartIcon } from "../../assets/shared/desktop/icon-cart.svg";
 import { ReactComponent as Logo } from "../../assets/shared/desktop/logo.svg";
 import { ReactComponent as Hamburger } from "../../assets/shared/tablet/icon-hamburger.svg";
+
 import { Transition } from "@headlessui/react";
+
 import { CategoriesContext } from "../../context/categories.context";
+import { CartContext } from "../../context/cart.context";
 
 import Category from "../../components/category/category.component";
+import CartModal from "../cart-modal/cart-modal.component";
 
 const Navigation = () => {
   const { categories } = useContext(CategoriesContext);
+  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
   const [isShowing, setIsShowing] = useState(false);
+
+  const toggleCart = () => {
+    setIsCartOpen((isCartOpen) => !isCartOpen);
+  };
   return (
     <>
       <div className="header bg-transparent flex items-center justify-between py-8 px-6 absolute w-full top-0 left-0 right-0 z-30 after:block after:absolute after:bg-white after:opacity-[.10] after:bottom-0 after:h-[1px] after:left-0 after:right-0 sm:justify-start sm:gap-[42px] sm:after:left-[20px] sm:after:right-[20px] xl:container xl:px-0 xl:after:inset-x-0 xl:justify-between">
@@ -38,8 +48,9 @@ const Navigation = () => {
           </Link>
         </div>
 
-        <CartLogo className="sm:ml-auto xl:ml-0" />
+        <CartIcon onClick={toggleCart} className="sm:ml-auto xl:ml-0" />
       </div>
+      {isCartOpen && <CartModal />}
       <Transition
         show={isShowing}
         enter="transition-opacity duration-75"

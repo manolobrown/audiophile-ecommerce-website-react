@@ -11,15 +11,16 @@ const BUTTON_TYPE_CLASSES = {
     "flex items-center gap-x-[13.3px] text-[13px] font-bold uppercase text-[#979797] hover:text-[#D87D4A]",
   buttonFour:
     "flex items-center text-white justify-center bg-black w-full max-w-[160px] min-h-[48px] uppercase mx-auto text-[13px] tracking-[1px] border border-black xl:mx-0 hover:text-black hover:bg-transparent",
-  buttonText:
-    "text-[15px] leading-[25px] text-[#000] opacity-50 hover:text-[#D87D4A]",
+  buttonText: "text-[15px] leading-[25px] text-black/50 hover:text-[#D87D4A]",
 };
 
-const Button = ({ children, url, buttonType, ...otherProps }) => {
+const Button = ({ children, url, buttonType, otherClasses, ...otherProps }) => {
   return (
     <a
       href={url}
-      className={`${buttonType ? BUTTON_TYPE_CLASSES[buttonType] : ""}`}
+      className={`${buttonType ? BUTTON_TYPE_CLASSES[buttonType] : ""}${
+        otherClasses ? " " + otherClasses : ""
+      }`}
       {...otherProps}
     >
       {children}
