@@ -15,11 +15,11 @@ const Category = () => {
       document.body.classList.remove("category-page");
     };
   }, []);
-  console.log(data);
+
   let filteredCategories = data.filter(
     (category) => category.category === params.category
   );
-  console.log(filteredCategories);
+
   filteredCategories.sort();
   filteredCategories.reverse();
   return (

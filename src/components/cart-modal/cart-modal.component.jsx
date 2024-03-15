@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { CartContext } from "../../context/cart.context";
 import Button from "../button/button.component";
-import CartQuantity from "../cart-quantity/cart-quantity.component";
-const cartModal = () => {
+import CartItem from "../cart-item/cart-item.component";
+
+const CartModal = () => {
+  const { cartItems } = useContext(CartContext);
   return (
     <div className="absolute z-10 top-[89px] w-full h-full bg-black/40 p-6">
       <div className="bg-white rounded-lg p-7">
@@ -13,20 +17,9 @@ const cartModal = () => {
           </Button>
         </div>
         <div className="flex flex-col gap-y-4 mb-8">
-          <div className="flex justify-between items-center">
-            <div className="flex gap-x-4">
-              <img
-                className="rounded-lg w-[64px] h-[64px] object-cover"
-                src={require("../../assets/cart/image-xx99-mark-two-headphones.jpg")}
-                alt="earphones"
-              />
-              <div>
-                <h4 className="text-[#000] font-bold">XX99 Mark II</h4>
-                <p className=" text-black/50 font-bold">$299.00</p>
-              </div>
-            </div>
-            <CartQuantity />
-          </div>
+          {cartItems.map((cartItem) => (
+            <CartItem key={cartItem.id} cartItem={cartItem} />
+          ))}
         </div>
         <div className="flex justify-between items-center mb-6">
           <span className="text-black/50">Total</span>
@@ -40,4 +33,4 @@ const cartModal = () => {
   );
 };
 
-export default cartModal;
+export default CartModal;

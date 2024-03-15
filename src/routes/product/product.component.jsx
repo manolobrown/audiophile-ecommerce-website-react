@@ -5,18 +5,19 @@ import Categories from "../../components/category/category.component";
 import { useParams } from "react-router-dom";
 import Button from "../../components/button/button.component";
 import CartQuantity from "../../components/cart-quantity/cart-quantity.component";
+import { CartContext } from "../../context/cart.context";
 
 const Product = () => {
   let params = useParams();
   const data = useContext(DataContext);
   const { categories } = useContext(CategoriesContext);
+  const { addItemToCart } = useContext(CartContext);
   useEffect(() => {
     document.body.classList.add("product-page");
     return () => {
       document.body.classList.remove("product-page");
     };
   }, []);
-  console.log(data);
   let getProduct = data.filter((product) => product.slug === params.slug);
   let USDollar = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -25,6 +26,10 @@ const Product = () => {
 
   const featuresDescription = getProduct[0].features.split("\n\n");
   const productName = getProduct[0].name.split(" ");
+
+  const addToCart = () => {
+    addItemToCart(getProduct[0]);
+  };
 
   return (
     <div className="bg-white pb-[120px] xl:pb-[160px]">
@@ -79,7 +84,9 @@ const Product = () => {
             </div>
             <div className="flex gap-x-4">
               <CartQuantity />
-              <Button buttonType="buttonOneAlt">Add to Cart</Button>
+              <Button buttonType="buttonOneAlt" onClick={addToCart}>
+                Add to Cart
+              </Button>
             </div>
           </div>
         </div>
@@ -179,7 +186,7 @@ const Product = () => {
             {Object.values(getProduct[0].others).map((product) => (
               <div
                 className="text-[15px] leading-[25px] flex flex-col text-center gap-y-8 mb-14 last:mb-0 items-center"
-                key={product}
+                key={product.name}
               >
                 <picture>
                   <source
