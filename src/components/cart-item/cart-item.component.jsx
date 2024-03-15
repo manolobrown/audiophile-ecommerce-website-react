@@ -2,7 +2,7 @@ import CartQuantity from "../cart-quantity/cart-quantity.component";
 
 const CartItem = ({ cartItem }) => {
   console.log(cartItem);
-  const { name, price, image, quantity, slug } = cartItem;
+  const { name, price, quantity, slug } = cartItem;
   let USDollar = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
