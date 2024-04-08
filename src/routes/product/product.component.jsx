@@ -1,4 +1,5 @@
 import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { DataContext } from "../../context/data.context";
 import { CategoriesContext } from "../../context/categories.context";
 import Categories from "../../components/category/category.component";
@@ -11,13 +12,17 @@ const Product = () => {
   let params = useParams();
   const data = useContext(DataContext);
   const { categories } = useContext(CategoriesContext);
-  const { addItemToCart } = useContext(CartContext);
+  const { addItemToCart, cartItems } = useContext(CartContext);
+  const navigate = useNavigate();
+  const goBack = () => {
+    navigate(-1);
+  };
   useEffect(() => {
     document.body.classList.add("product-page");
     return () => {
       document.body.classList.remove("product-page");
     };
-  }, []);
+  }, [cartItems]);
   let getProduct = data.filter((product) => product.slug === params.slug);
   let USDollar = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -35,10 +40,7 @@ const Product = () => {
     <div className="bg-white pb-[120px] xl:pb-[160px]">
       <div className="container">
         <div className="pt-4 pb-6">
-          <Button
-            url={`/category/${getProduct[0].category}`}
-            buttonType="buttonText"
-          >
+          <Button onClick={goBack} buttonType="buttonText">
             Go Back
           </Button>
         </div>

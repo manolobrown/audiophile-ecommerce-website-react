@@ -4,11 +4,13 @@ import { CategoriesContext } from "../../context/categories.context";
 import Categories from "../../components/category/category.component";
 import { useParams } from "react-router-dom";
 import Button from "../../components/button/button.component";
+import { CartContext } from "../../context/cart.context";
 
 const Category = () => {
   let params = useParams();
   const data = useContext(DataContext);
   const { categories } = useContext(CategoriesContext);
+  const { cartItems } = useContext(CartContext);
   useEffect(() => {
     document.body.classList.add("category-page");
     return () => {

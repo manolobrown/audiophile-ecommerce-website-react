@@ -1,8 +1,7 @@
 import CartQuantity from "../cart-quantity/cart-quantity.component";
 
 const CartItem = ({ cartItem }) => {
-  console.log(cartItem);
-  const { name, price, quantity, slug } = cartItem;
+  const { name, price, quantity, slug, id } = cartItem;
   let USDollar = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -20,7 +19,7 @@ const CartItem = ({ cartItem }) => {
           <p className=" text-black/50 font-bold">{USDollar.format(price)}</p>
         </div>
       </div>
-      <CartQuantity quantity={quantity} />
+      <CartQuantity quantity={quantity} updateCart={true} productId={id} />
     </div>
   );
 };
